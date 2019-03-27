@@ -1,0 +1,28 @@
+<label class="ads-row text-center"style="background: #56B22D;cursor: pointer; color: #fff;">
+    <label class="ads-row"  ng-click="isshow()"><i class="fa fa-plus"></i> 添加事件</label>
+    <label class="ads-row {{showAdd}}" style="background: #dff0d8; color: #333; font-weight: normal;"
+           ng-show="showAdd"
+           setting="{{setting}}"
+           event-set=""></label>
+</label>
+<label class="ads-row" setting="{{selectedItem.events}}" ng-if="selectedItem.events">
+
+    <label class="ads-row" ng-repeat="(k,itemEvent) in selectedItem.events track by $index" >
+
+        <label class="ads-row" style="border-top: 1px solid #ddd; padding: 5px 0; font-weight: normal;" ng-click="activeShowElem[k]=!activeShowElem[k]">
+            事件 {{k+1}} - {{itemEvent.EventName}} -
+            <span ng-if="itemEvent.doWhat=='transform'">触发 {{itemEvent.animateWhatcnNameOnCompent}}-{{itemEvent.animateWhatIdOnCompent}} 上的[{{itemEvent.animateCnName}}]动画</span>
+            <span ng-if="itemEvent.doWhat!='transform'">{{itemEvent.doWhatName}}</span>
+            <span class="pull-right glyphicon glyphicon-menu-down"></span>
+        </label>
+        <label class="ads-row {{canShow[itemEvent.event_id]}}" style="background: #dff0d8;"
+               event-set="{{k}}"
+               ng-show="activeShowElem[k]"
+               setting="{{itemEvent}}"></label>
+    </label>
+
+</label>
+
+
+
+

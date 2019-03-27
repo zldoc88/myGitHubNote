@@ -1,0 +1,79 @@
+<label class="ads-row foxfix" >
+    <span class="ads-c-4">事件:</span>
+    <span class="ads-c-6" >
+        <select  class="form-control"   ng-model="setting.compentEventType" >
+            <option ng-repeat="evens in eventsOptions track by $index"
+                    ng-selected="evens.val==setting.compentEventType"
+                    value="{{evens.val}}">{{evens.name}}</option>
+            <option ng-if="hasNotLoopAnimations(selectedItem.animations)"
+                    ng-selected="setting.compentEventType == 'animationEnd'"
+                    value="animationEnd">动画完成</option>
+        </select>
+    </span>
+</label>
+
+<label class="ads-row foxfix" ng-show="showAnimationList && setting.compentEventType=='animationEnd'" >
+    <span class="ads-c-4">动画：</span>
+    <span class="ads-c-6">
+        <select class="form-control"   ng-model="setting.animationID" >
+            <option ng-selected="setting.animationID == 'none'"
+                    value="none">-选择动画-</option>
+            <option ng-repeat="animate in activeAnimations track by $index"
+                    ng-selected="setting.animationID==animate.id"
+                    value="{{animate.id}}">{{animate.animateName}} 完成</option>
+        </select>
+    </span>
+</label>
+
+<label class="ads-row foxfix" ng-show="setting.compentEventType!='none'" >
+    <span class="ads-c-4">触发：</span>
+    <span class="ads-c-6">
+        <select class="form-control"   ng-model="setting.doWhat" >
+            <option ng-selected="setting.doWhat=='none'" value="none">-操作类型-</option>
+            <option ng-repeat="even in EventsGrouds track by $index"
+                    ng-selected="even.type==setting.doWhat"
+                    value="{{even.type}}">{{even.title}}</option>
+            <option ng-if="hasEventByOtherForActivePageCompent(ActivePageData) && setting.compentEventType=='click'"
+                    ng-selected="setting.compentEventType == 'transform'"
+                    value="transform">组件动画</option>
+        </select>
+    </span>
+</label>
+
+<label class="ads-row foxfix" ng-show="showActivePageAnimationList && setting.compentEventType=='click' && setting.doWhat=='transform'" >
+    <span class="ads-c-4">选择动画：</span>
+    <span class="ads-c-6" ts-data="{{activePageAnimationList}}">
+        <select class="form-control"
+                ng-model="setting.hasThisAnimateKey"
+                ng-options="t as itemCompentAnimte.animateName group by itemCompentAnimte.component_cnName for (t,itemCompentAnimte) in activePageAnimationList" ></select>
+    </span>
+</label>
+
+<label class="ads-row foxfix" ng-if="setting.doWhat=='href'" >
+    <span class="ads-c-4">跳转URL：</span>
+    <span class="ads-c-6">
+        <input class="form-control" value="{{setting.target}}" ng-model="setting.target" placeholder="请输入地址" type="text" />
+    </span>
+</label>
+
+<label class="ads-row foxfix" ng-if="setting.doWhat=='changePage'" >
+    <span class="ads-c-4">翻至：</span>
+<span class="ads-c-6">
+    <select class="form-control"   ng-model="setting.target" >
+        <option ng-repeat="(k,page) in MAP['pageMaps'] track by $index" value="{{page.id}}" ng-selected="setting.target==page.id" >页面 {{k+1}}</option>
+    </select>
+</span>
+    <span class="ads-c-2">页</span>
+</label>
+
+<div class="ads-row foxfix text-center" style="padding: 5px 0; background: rgba(252, 243, 46, 0.06); margin-top: 8px;border-top: 1px solid #b4b4b4;"  >
+    <button class="btn btn-primary" ng-click="saveEvent(isKey)">保存</button>
+    <button class="btn btn-danger" ng-if="isKey" ng-click="removeItemEvent(isKey)" style="margin-left:10px" >删除</button>
+    <button class="btn btn-danger" ng-if="!isKey" style="margin-left:10px" ng-click="isshow()" >取消</button>
+</div>
+
+</label>
+
+
+
+

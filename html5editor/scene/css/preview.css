@@ -112,9 +112,21 @@ label{ margin: 0;}
     white-space: nowrap;
 }
 
+html,body{
+    height: 100%; overflow: hidden;; width: 100%;
+}
 .page-model-list{
-    position: absolute;; top: 0;  left: 0;width: 100%; height: 100%; overflow-x: hidden;;
+    display: table;; height: 100%;
+    top: 0;  left: 0;width: 100%;
 }
 .page-model-list .item-page{
-    display: table;width: 100%; height: 100%;
+    width: 100%; top: 0; left: 0; position: absolute;;
+    height: 100%; display: none;;
+    overflow-x: hidden;; overflow-y: auto;
+    -webkit-overflow-scrolling : touch;
 }
+.page-model-list .item-page.active{
+     display: block;;
+}
+.page-model-list .item-page{display: none;}
+.page-model-list .item-page.active{display: block;}

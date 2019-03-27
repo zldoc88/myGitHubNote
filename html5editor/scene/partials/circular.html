@@ -1,0 +1,84 @@
+<label class="ads-row foxfix" >
+    <span class="ads-c-4">左边:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     data-slider-min="0" data-slider-max="" data-slider-step="1" data-slider-value="{{selectedItem.left}}"
+                                     change-value
+                                     setting="{{selectedItem.left}}"
+                                     itemtype="left"
+                                     type="number" step="1" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">顶部:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.top}}"
+                                     itemtype="top"
+                                     type="number" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">宽度:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.width}}"
+                                     itemtype="width"
+                                     type="number" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix" >
+    <span class="ads-c-4">高度:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.height}}"
+                                     itemtype="height"
+                                     type="number" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">透明度:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.opacity}}"
+                                     itemtype="opacity"
+                                     type="number" step="0.1" max="1" min="0" /></span>
+    <span class="ads-c-2 text-center"></span>
+</label>
+
+<label class="ads-row foxfix">
+    <span class="ads-c-4">旋转度数:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.rotate}}"
+                                     itemtype="rotate"
+                                     step="1" max="360" min="-360"  type="number" /></span>
+    <span class="ads-c-2 text-center">deg</span>
+</label>
+
+
+<label class="ads-row foxfix">
+    <span class="ads-c-4">边框类型:</span>
+        <span class="ads-c-6">
+            <select class="form-control"
+                    selete-init
+                    setting="{{selectedItem.borderStyle}}"
+                    defaultoptions = "[{name:'无',val:'none'},{name:'实线',val:'solid'},{name:'虚线',val:'dashed'}]"
+                    itemtype="borderStyle"></select>
+         </span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">边框粗细:</span>
+    <span class="ads-c-6"><input class="form-control"
+                                 change-value
+                                 setting="{{selectedItem.borderWidth}}"
+                                 itemtype="borderWidth"
+                                 type="number" step="1"  min="0" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">边框颜色:</span>
+    <span class="ads-c-6"><input class="form-control" colorpicker="rgba" type="text"  ng-model="selectedItem.borderColor" /></span>
+</label>
+
+<label class="ads-row foxfix" ng-controller="backgroundSetting" set-background  ng-model="selectedItem"></label>
+

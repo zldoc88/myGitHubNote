@@ -55,6 +55,28 @@
     <span class="ads-c-2 text-center">deg</span>
 </label>
 <label class="ads-row foxfix">
+    <span class="ads-c-4">圆角大小:</span>
+        <span class="ads-c-6">
+            <input class="form-control"
+                   change-value
+                   setting="{{selectedItem.borderRadius}}"
+                   itemtype="borderRadius"
+                   type="number" step="1"  min="0" />
+         </span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">圆角位置:</span>
+    <span class="ads-c-8">
+        <span class="ads-row">
+            <span class="ads-c-6"><input name="borderRadiusPosition" class="" ng-checked="selectedItem.borderRadiusLeftTop" ng-click="checkedItemValue($event,'borderRadiusLeftTop',true,false)"  type="checkbox" />左上</span>
+            <span class="ads-c-6"><input name="borderRadiusPosition" class="" ng-checked="selectedItem.borderRadiusRightTop" ng-click="checkedItemValue($event,'borderRadiusRightTop',true,false)" type="checkbox" />右上</span>
+            <span class="ads-c-6"><input name="borderRadiusPosition" class="" ng-checked="selectedItem.borderRadiusRightBottom" ng-click="checkedItemValue($event,'borderRadiusRightBottom',true,false)" type="checkbox" />右下</span>
+            <span class="ads-c-6"><input name="borderRadiusPosition" class="" ng-checked="selectedItem.borderRadiusLeftBottom" ng-click="checkedItemValue($event,'borderRadiusLeftBottom',true,false)" type="checkbox" />左下</span>
+        </span>
+     </span>
+</label>
+
+<label class="ads-row foxfix">
     <span class="ads-c-4">边框类型:</span>
         <span class="ads-c-6">
             <select class="form-control"
@@ -77,12 +99,6 @@
     <span class="ads-c-4">边框颜色:</span>
     <span class="ads-c-6"><input class="form-control" colorpicker="rgba" type="text"  ng-model="selectedItem.borderColor" /></span>
 </label>
-<label class="ads-row foxfix">
-    <span class="ads-c-4">背景颜色:</span>
-    <span class="ads-c-6"><input class="form-control"  colorpicker="rgba" type="text"  ng-model="selectedItem.backgroundColor"  /></span>
-</label>
-<label class="ads-row foxfix">
-    <span class="ads-c-4">背景图片:</span>
-    <span class="ads-c-4"><a class="btn btn-default" href="javascript:;" >选择图片</a></span>
-    <span class="ads-c-4">暂无</span>
-</label>
+
+<label class="ads-row foxfix" ng-controller="backgroundSetting" set-background  ng-model="selectedItem"></label>
+

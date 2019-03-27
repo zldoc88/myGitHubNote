@@ -1,0 +1,41 @@
+<div class="animateGuide"
+     sv-root
+     sv-on-sort="onSort($item,$partFrom,$index ,$partTo ,$indexFrom,$indexTo)"
+     sv-on-start="onStarted($part, $item, $index)"
+     sv-part="animations">
+    <div class="ads-row foxfix"
+         ng-class="{true:'active',false:''}[animat.component_id==selectedItem.id]"
+         ng-repeat="(i,animat) in animations track by $index"
+         sv-element=""
+         ng-click="chooseComponent(animat.component_type,animat.component_id)">
+
+        <div class="ads-c-6 labelName">{{animat.component_cnName}}{{animat.component_id}}-动画{{animat.id}}：{{animat.animateName}}</div>
+        <div class="ads-c-6 shametime">
+            <span class="lable-timer"  tes="{{animat.moment}}" style="width: {{animat.longer*10}}px;margin-left:{{animat.moment*10 + 10}}px;{{animat.animateStart=='event'? 'background:#fc3;':(animat.longer >9 ? 'background:#c00;':'')}}"></span>
+
+            <!-- Single button -->
+            <div class="btn-group item-dropdown navbar-right" uib-dropdown is-open="status.isopen">
+                <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                    <li ng-click="setAnimateStart(animat,'asSameAs',i)" class="{{animat.animateStart=='asSameAs'?'active':''}}"><a  href="javascript:;">与上一动画同时</a></li>
+                    <li ng-click="setAnimateStart(animat,'after',i)" class="{{animat.animateStart=='after'?'active':''}}"><a   href="javascript:;">在上一动画之后</a></li>
+                    <li ng-click="setAnimateStart(animat,'event',i)" class="{{animat.animateStart=='event'?'active':''}}"><a   href="javascript:;">由事件触发</a></li>
+                    <hr>
+                    <li class="" ><a  ng-click="deleAnimationItem(animat,i)"   href="javascript:;">删除动画</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="previewCompent">
+            <button class="btn btn-default" ng-click="playAnimate(i)" id="playAnimate">
+                <span class="glyphicon glyphicon-play" ></span>
+            </button>
+        </div>
+    </div>
+
+
+
+</div>
+

@@ -1,0 +1,70 @@
+<div class="animateSetting">
+
+    <div class="ads-row foxfix">
+        <div class="ads-c-3">
+            <label>类型</label>
+        </div>
+        <div class="ads-c-5">
+            <select name="animateStyleGroup" class="form-control" ng-options="effect.val as effect.name for effect in effectArr"  ng-model="setting.animateStyleGroup" >
+            </select>
+        </div>
+        <div class="ads-c-3">
+            <button id="playAnimate" ng-click="playAnimate()" class="btn btn-default">
+                <span class="glyphicon glyphicon-play"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="ads-row foxfix" ng-if="effectGroups.length>0">
+        <div class="ads-c-3">
+            <label>效果</label>
+        </div>
+        <div class="ads-c-8">
+            <select class="form-control" name="animateStyle"  ng-options="animate.val as animate.label group by animate.groupName for animate in effectGroups" ng-model="setting.animateStyle"> </select>
+        </div>
+    </div>
+
+    <div class="ctrlSliderBox ads-row foxfix setanimationDelay" setWhat="animationDelay">
+        <div class="ads-c-3">
+            <label>延迟时间</label>
+        </div>
+        <div class="ads-c-6">
+            <input class="form-control" type="number"  string-to-number  ng-model="setting.animationDelay"  min="0.1" step="0.1" >
+        </div>
+        <div class="ads-c-1">
+            <span>s</span>
+        </div>
+    </div>
+
+    <div class="ctrlSliderBox ads-row foxfix" setWhat="animateTime">
+        <div class="ads-c-3">
+            <label>持续时间</label>
+        </div>
+        <div class="ads-c-6">
+            <input class="form-control" type="number" value="{{setting.animateTime}}" string-to-number  ng-model="setting.animateTime" step="0.1" min="0.1">
+        </div>
+        <div class="ads-c-1">
+            <span>s</span>
+        </div>
+
+    </div>
+
+    <div class="ads-row foxfix">
+        <div class="ads-c-3">
+            <label>重复</label>
+        </div>
+        <div class="ads-c-6">
+            <select class="form-control" name="animationCount" ng-options="option.val as option.name for option in countOptions" ng-model="setting.animationCount">
+            </select>
+        </div>
+    </div>
+
+
+    <div>
+        <button class="btn btn-danger pull-right" style="margin-left:10px" ng-if="isNewSetting" ng-click="cancelSetting()" >取消</button>
+        <button class="btn btn-danger pull-right" style="margin-left:10px" ng-if="!isNewSetting" ng-click="removeSetting(t)" >删除</button>
+        <button class="btn btn-primary pull-right" ng-click="saveSetting()">保存</button>
+        <div class="clearfix"></div>
+    </div>
+</div>
+

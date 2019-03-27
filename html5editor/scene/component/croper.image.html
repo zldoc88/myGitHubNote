@@ -1,0 +1,24 @@
+<div class="coper-images-container ads-row">
+    <div class="ads-c-3 corp-preview">
+        <p>裁剪预览：</p>
+        <div class="ads-row pic preview-result"><img ng-src="{{DefaultUrl}}" /></div>
+    </div>
+    <div class="ads-c-9 corp-area">
+        <img style="max-height: 400px;" id="coper-img-tagert" ng-src="{{DefaultUrl}}" />
+        <div class="ads-row btn-tool">
+            <a href="javascript:;" ng-click="resetCroper(16/9);"  class="btn btn-default">16:9</a>
+            <a href="javascript:;" ng-click="resetCroper(4/3);"  class="btn btn-default">4:3</a>
+            <a href="javascript:;" ng-click="resetCroper(1/1);"  class="btn btn-default">1:1</a>
+            <a href="javascript:;" ng-click="resetCroper(2/3);" class="btn btn-default">2:3</a>
+            <a href="javascript:;" ng-click="croperRotate(-45);"  class="btn btn-default"><i class="fa fa-rotate-left"></i></a>
+            <a href="javascript:;" ng-click="croperRotate(45);"  class="btn btn-default"><i class="fa fa-rotate-right"></i></a>
+            <a href="javascript:;" ng-click="croperScale('scaleX')"  class="btn btn-default"><i class="fa fa-arrows-h"></i></a>
+            <a href="javascript:;" ng-click="croperScale('scaleY')"  class="btn btn-default"><i class="fa fa-arrows-v"></i></a>
+        </div>
+    </div>
+    <div class="ads-row do-manager">
+        <a href="javascript:;" class="btn btn-danger">使用原图</a>
+        <a href="javascript:;" ng-click="useCoperdata();" class="btn btn-primary">使用该裁剪</a>
+        <a href="javascript:;" ng-click="cancelCope()" class="btn btn-default">返回重选</a>
+    </div>
+</div>

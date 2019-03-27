@@ -1,1 +1,1 @@
-var app = angular.module('MyApp',['colorpicker.module','ui.bootstrap']);
+var app = angular.module('MyApp',['colorpicker.module','ui.bootstrap','ngAnimate','angular-sortable-view','cfp.hotkeys']);
