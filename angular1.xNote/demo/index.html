@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html  lang="zh-cn" ng-controller="global"   >
+<head >
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <title>Guess</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+    <link href="css/ionicons.min.css?v=112" rel="stylesheet" type="text/css" />
+
+    <link href="css/mo.ui.buttom.css?v=1124" rel="stylesheet" type="text/css" />
+    <link href="css/mo.ui.conpent.css?v=1142" rel="stylesheet" type="text/css" />
+    <link href="css/mo.ui.form.css?v=1124" rel="stylesheet" type="text/css" />
+    <link href="css/mo.ui.layout.css?v=1112" rel="stylesheet" type="text/css" />
+    <link href="css/mo.ui.theme.css?v=1124" rel="stylesheet" type="text/css" />
+
+    <link href="css/confrim.css?v=251" rel="stylesheet" type="text/css" />
+    <link href="css/app.css?v=112" rel="stylesheet" type="text/css" />
+    <link href="css/anim-in-out.css" rel="stylesheet" type="text/css" />
+    <link href="css/animations.css" rel="stylesheet" type="text/css" />
+
+    <script  src="./libs/viewport.js" ></script>
+    <script data-main="./config/config.js?v=2251" src="./libs/require.js"></script>
+
+</head>
+
+<body >
+<div public-head id="main-bar" class="ads-row"></div>
+<div id="wrapper"
+     class="main-container anim-in-out {{mainViewStyle}}"
+     ui-view=""
+     k="{{mainViewStyle}}"
+     data-anim-speed="350"
+     data-anim-sync="true"
+     style="transition-duration: 350ms;"  ></div>
+<!--<div public-footer id="main-foo"></div>-->
+
+</body>
+
+</html>

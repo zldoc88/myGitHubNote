@@ -1,0 +1,53 @@
+.mo-ui-button{
+    display: inline-block;;
+    color: #333;
+    font-size: 0.475rem;
+    cursor: pointer;
+    background: none;
+    box-shadow: none;
+    text-align: center;
+    text-decoration: none;
+    padding:0.3rem 0.4rem;
+    border: 1px solid transparent;
+    outline: 0 none;
+    border-radius:0;
+    appearance: none;
+    -webkit-appearance: none;
+}
+.mo-ui-button.mo-ui-block{
+    display: block;;
+    width: 100%;
+}
+
+.mo-ui-button.mo-ui-default{
+    background-color: #fff;
+    border-color: #ececec;
+    color: #333;
+}
+.mo-ui-button.mo-ui-primary{
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    color: #fff;
+}
+.mo-ui-button.mo-ui-success{
+    background-color: #04BE02;
+    border-color: #04BE02;
+    color: #fff;
+}
+.mo-ui-button.mo-ui-info{
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    color: #fff;
+}
+
+.mo-ui-button.mo-ui-warning{
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    color: #fff;
+}
+
+.mo-ui-button.mo-ui-danger{
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    color: #fff;
+}

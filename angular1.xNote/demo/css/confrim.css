@@ -1,0 +1,181 @@
+
+
+.dialog-box img{ width: auto;}
+
+/*----------------------dialog-----------*/
+
+.ui-dialog-main{ position: fixed;z-index: 1991024; top: 0; left: 0; width: 100%; height: 100%;display: table; vertical-align: middle; text-align: center;}
+.ui-dialog-main.on-showing{ background: rgba(0,0,0,0.7);}
+.ui-dialog-main .dialog-box{display: table-cell;vertical-align: middle; }
+.ui-dialog-main .dialog-content{ padding:15px 0px 0 15px; text-align: left; font-size: 14px;/*display: table-cell;*/ vertical-align: middle;}
+.ui-dialog-main .dialog-box .dialog-show{
+    background: #edf0f2;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    color: #333;
+    margin: 0 auto;
+    padding: 30px 10px 0;
+    position: relative;
+
+
+
+}
+
+.show-Icon-tip {
+    /*float: left;*/
+/*    display: table-cell;;*/
+    padding-top: 20px;
+    width: 25%;
+    margin: 0 auto;
+    vertical-align: middle; text-align: center;
+}
+.show-Icon-tip img{ width: 100%; display: inline-block;}
+
+.ui-dialog-main .dialog-box .dialog-show{
+    width:81.25%;
+    max-width: 360px;
+    min-width: 200px;
+    padding-top: 0;
+}
+
+.ui-dialog-main.on-showing .dialog-box .dialog-show{
+    -webkit-transform: scale(1);
+    -webkit-animation-name: showConfrim;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 450ms;
+
+    transform: scale(1);
+    animation-name: showConfrim;
+    animation-timing-function: ease;
+    animation-duration: 450ms
+}
+
+.ui-dialog-main.on-hidening .dialog-box .dialog-show{
+    -webkit-transform: scale(1);
+    -webkit-animation-name: hideConfrim;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 450ms;
+
+    transform: scale(1);
+    animation-name: hideConfrim;
+    animation-timing-function: ease;
+    animation-duration: 450ms
+}
+
+@keyframes showConfrim{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes showConfrim{
+    0%{
+        -webkit-transform: scale(0);
+    }
+    100%{
+        -webkit-transform: scale(1);
+    }
+}
+@keyframes hideConfrim{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+@-webkit-keyframes hideConfrim{
+    0%{
+        -webkit-transform: scale(1);
+    }
+    100%{
+        -webkit-transform: scale(0);
+    }
+}
+
+.dialog-waring img{ vertical-align: middle;}
+
+.dialog-head{ top: 0; right: 0; position: absolute; margin-top: -40px; margin-right: -40px;}
+
+
+/*.ui-dialog-main.on-showing .dialog-box .dialog-show{
+    animation:animateshow 0.3s;
+    -webkit-animation: animateshow 0.3s;
+}*/
+.ui-dialog-main.fade{
+    opacity: 0;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.ui-dialog-main.fade.on-showing{
+    opacity: 1;
+}
+
+.ui-dialog-main .dialog-controler{ text-align: center; margin: 20px -10px 0; padding:4% 0; background: #f6f6f6;
+    /*border-top: 1px solid #ccc;*/
+    border-radius: 0 0 4px 4px;
+    clear: both;;
+}
+.ui-dialog-main .dialog-controler a{
+    font-size: 14px;
+    display: inline-block; text-decoration: none; padding:2% 0px;  width: 40%; margin: 0 10px;border-radius: 3px;
+    background: #F0F0F0;
+    border:1px solid #B9BABC; color: #333;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.ui-dialog-main .dialog-controler a:hover{ background: #dedede;}
+.btn-close{ position: absolute; right: -10px; top:-10px; cursor: pointer;}
+.btn-close a{ display:inline-block ; text-align: center; line-height: 24px;
+    border-radius:11px;
+    font-size: 22px; height:24px; width: 24px; cursor: pointer; font-family: arial; font-weight: bold;
+    color: #fff;
+    border: 1px solid #fff;
+    background: #c00;
+    box-shadow: 0 1px 3px rgba(0,0,0,.6);
+    transition: all 350ms ease-in-out;
+    -webkit-transition: all 350ms  ease-in-out;
+}
+.btn-close a:hover,.btn-close a:focus{ text-decoration: none;
+    color: #fff;
+    background: #be0000;
+/*box-shadow: 0 0 3px #48a7cc;*/
+}
+
+.ui-dialog-main .dialog-controler a.dialog-btn-true{
+    background:linear-gradient(to bottom,#53ab4b, #238e38);
+    background: -webkit-linear-gradient(top,#53ab4b, #238e38);
+    color: #fff; border: 1px solid #238e38;
+}
+.ui-dialog-main .dialog-controler a.dialog-btn-true:hover{
+    background:linear-gradient(to bottom,#53ab4b, #238e38);
+    background: -webkit-linear-gradient(top,#53ab4b, #238e38);
+
+}
+
+.dialog-content input{ width: 94%;
+    border: 1px solid #cecece;
+    line-height: 26px;
+}
+
+
+@keyframes animateshow{
+    0%   {width:100%;opacity: 0;}
+    50%  {width:90%;opacity: 0.5;}
+    100% {width:80%;opacity: 1;}
+}
+
+@-webkit-keyframes animateshow{
+    0%   {width:100%;opacity: 0;}
+    50%  {width:90%;opacity: 0.5;}
+    100% {width:80%;opacity: 1;}
+}
+
+/*-----------------end-----dialog-----------*/
+

@@ -1,0 +1,217 @@
+/*共用*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {
+    margin: 0;    padding: 0;    border: 0;   vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {    display: block;}
+body { font-size:14px;work-break:normal;white-space:normal; line-height: 22px;}
+ol, ul { list-style: none;}
+blockquote, q {    quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after { content: ''; content: none;}
+table { border-collapse: collapse; border-spacing: 0;}
+a,button,input,div{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    outline:none;
+    text-decoration: none;
+}
+body a:hover,body a:focus,body a:active,body a:link{ text-decoration: none; outline: 0 none;}
+.type-change a:focus, .type-change a:hover{color:#666}
+*{ box-sizing:border-box;}
+.img{ display:block;}
+img{width:100%;display:block;border:0 none;outline:0 none;}
+
+em,i{ font-style: normal;}
+
+
+input[type="text"],input[type="password"],textarea,input[type="tel"]{
+    outline:0 none;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    border:0;
+    border: 1px solid #bababa;
+    border-radius: 0.1rem;
+    font-weight: normal;
+}
+input::-webkit-input-placeholder{ /* WebKit browsers */
+    color:#7f7f7f;
+    font-size:0.4375rem; font-weight: normal;
+}
+textarea::-webkit-input-placeholder{ /* WebKit browsers */
+    color:#7f7f7f;
+    font-size:0.4375rem; font-weight: normal;
+}
+select{
+    outline:0 none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    border:0;
+}
+
+
+button,button:active,button:focus{ font-size: 1em;outline: none;
+    line-height: 22px;box-shadow: none; border: 0;
+}
+.btn{ display: inline-block;
+    /*background:linear-gradient(to bottom,#ffac16, #ff9105);
+    background: -webkit-linear-gradient(top,#ffac16, #ff9105);*/
+    border: 1px solid #ddd;
+   /* text-shadow:0px 1px 1px rgba(0, 0, 0, 0.75) inset;*/
+    color: #333;
+    border-radius: 0.34rem;
+    vertical-align: middle;
+    background: #fff;
+    font-weight: normal;
+    line-height: 0.68rem;
+    font-size: 0.42rem;
+    text-align: center;
+    padding: 0  0.42rem;
+}
+.btn.blue{
+    background: #0f9bda;
+    color: #fff;
+    border-color: #0f9bda;
+}
+.btn.default{
+    background: #fff;
+    color: #333;
+    border-color: #ddd;
+}
+.btn.green{
+    background: #04be02;
+    color: #fff;
+    border-color: #04be02;
+}
+
+
+.ads-contuiter{
+    position: absolute;;
+    left: 0;
+    top: 0;z-index: 10;
+    width: 100%; height: 100%;
+    clear: both; margin: 0 auto;
+    display: table;;
+    font-size: 0.375rem;
+    line-height: 0.6875rem;
+    background-color: #e6e4dd;
+}
+.ads-row{ width: 100%; clear: both; display: table;}
+
+.ads-c-0,.ads-c-1,.ads-c-2,.ads-c-3,.ads-c-4,.ads-c-5,.ads-c-6,.ads-c-7,.ads-c-8,.ads-c-9,.ads-c-10,.ads-c-11,.ads-c-12,.ads-mg-7{ float: left;}
+.ads-c-0,.td-0{ width: 0;}
+.ads-c-1,.td-1{width: 8.33333333%}
+.ads-c-2,.td-2{width: 16.66666667%}
+.ads-c-3,.td-3{width: 25%}
+.ads-c-4,.td-4{width: 33.33333333%}
+.ads-c-5,.td-5{width: 41.66666667%}
+.ads-c-6,.td-6{ width: 50%}
+.ads-c-7,.td-7{width: 58.33333333%}
+.ads-c-8,.td-8{width: 66.66666667%}
+.ads-c-9,.td-9{ width: 75%}
+.ads-c-10,.td-10{width: 83.33333333%}
+.ads-c-11,.td-11{width: 91.66666667%}
+.ads-c-12,.td-12{ width: 100%;}
+.ads-mg-7{ width: 14.28571428%}
+
+.td{
+    display: table-cell; vertical-align: middle; height: 100%;
+}
+.mod-row{
+    display: table;; width: 100%; clear: both;;
+}
+.btn-control{ margin-top:0.12rem; text-align: center;}
+
+
+/*body .btn:focus,body  .btn:active,body .btn:link,body a.btn:link,body a.btn:active,body a.btn:visited,body a.btn:focus{
+    color: #fff;
+}*/
+
+
+a,button,input,div,a:focus,button:focus,input:focus,div:focus{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    outline:none;
+    text-decoration: none;
+}
+.blur-background{
+    -webkit-filter: blur(0.5px);
+    -moz-filter: blur(0.5px);
+    -o-filter: blur(0.5px);
+    -ms-filter: blur(0.5px);
+    filter: blur(0.5px);
+}
+ul,li{
+    padding: 0; margin: 0; list-style-type: none;
+}
+a:hover,a:focus{ text-decoration: none; }
+img{width: 100%;display: block;}
+.input-group-addon{
+    background: none;
+}
+input.form-control,select.form-control,textarea.form-control{
+    border: 1px solid #eee;
+    height: 0.82rem; width: 100%;
+    border-radius: 0.24rem;
+    background: #eee;
+    box-shadow:0 1px 1px rgba(0, 0, 0, 0.35) inset;
+    font-size: 0.42rem;
+    padding-left: 0.2rem;
+    resize: none;;
+}
+select.form-control{padding-left: 0;}
+textarea.form-control{padding-top: 0.2rem;padding-bottom: 0.2rem;}
+.input-group .input-group-addon,.input-group .form-control{
+    border-radius: 0 0;
+}
+.input-group .form-control:not(:first-child){
+    border-left: 0;
+}
+.input-group .form-control:not(:last-child){
+    border-right: 0;
+}
+
+.text-right{
+    text-align: right;
+}
+
+
+.tool-title{
+    border-bottom: 1px solid #ddd;
+    width: 100%; display: table;padding: 0 10px;line-height: 26px;
+}
+.tool-title .more{
+    float: right;
+}
+
+
+.table{margin-bottom: 0; display: table; width: 100%; height: 100%;}
+.not-allow-scroll{
+    height: 100%;
+}
+.not-allow-scroll body{
+    height: 100%;overflow: hidden;;
+}
+.fl-l{float: left;}
+.fl-r{float: right;}
+.absolute{
+    position: absolute;
+}
+.relative{
+    position: relative;
+}
+
+.text-center{text-align: center;}
+
+body *{font-size: 0.375rem;}
+
+/*--------------------------------header-------footer---------start------------*/
+
+
+.testAnimtion{
+    display: block;; width: 2rem;
+    height:2rem;
+    background: #f60;
+    margin: 0 auto;
+}

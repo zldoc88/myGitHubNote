@@ -1,0 +1,228 @@
+/*todo==================文本输入=========================================================*/
+.mo-ui-form-control{
+    background-color: #fff;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow:none;
+    color: #555;
+    display: block;
+    padding:0.2rem 0.4rem;
+    width: 100%;
+    outline: 0 none;
+    vertical-align: middle;;
+    -webkit-appearance:none ;
+    appearance:none ;
+}
+textarea.mo-ui-form-control{
+    height: 2rem;resize: none;;
+}
+.mo-ui-input{
+    display: table;; width: 100%;
+    border-collapse: separate;
+    border-bottom: 1px solid #EFEFEF;
+}
+.mo-ui-input label{
+    width: 1%;display: table-cell;;white-space: nowrap;
+    vertical-align: middle;;
+}
+.mo-ui-input input{
+    display: table-cell;;width: 99%;
+}
+.mo-ui-hide-lable label{
+    display: none;;
+}
+/*todo==================单选&多选=========================================================*/
+.mo-ui-checkTool{
+    position: relative;; padding: 0.3rem 0;
+    border-bottom: 1px solid #EFEFEF; text-align: left;
+}
+.mo-ui-checkTool.mo-ui-checkTool-text-right{text-align: right;}
+.mo-ui-checkTool .mo-ui-check-animat:before,.mo-ui-checkTool .mo-ui-check-animat:after{
+    transition: all 250ms ease-in-out;
+    -webkit-transition: all 250ms ease-in-out;
+}
+.mo-ui-checkTool input{
+    position: absolute;; left: 0;
+    top:0;
+    width: 100%;height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    outline: 0 none;
+    appearance:none ;
+    -webkit-appearance:none ;
+    z-index: 10;
+}
+.mo-ui-checkTool label{
+    display: table; width: 100%;
+}
+/*---------圆------------------*/
+.mo-ui-checkTool .mo-ui-check-circular:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    display: block;;
+    width:0.8rem;
+    height:0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+.mo-ui-checkTool .mo-ui-check-circular:before{
+    content:"";
+    position: absolute;
+    right: 0;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    display: none;
+    width:0.8rem;
+    height:0.8rem;
+    text-align: center;
+    font-family: "Ionicons";
+    font-size: 0.475rem;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height:0.8rem;
+    text-rendering: auto;
+    text-transform: none;
+    z-index: 2;
+}
+.mo-ui-checkTool.mo-ui-checkTool-text-right .mo-ui-check-circular:after{
+    right: auto; left: 0;
+}
+.mo-ui-checkTool.mo-ui-checkTool-text-right .mo-ui-check-circular:before{
+    right: auto; left: 0;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-default:before{
+    display: block;;color: #333;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-default:after{
+    background: #fff;
+    border-color: #ccc;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-success:before{
+    display: block;;color: #fff;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-success:after{
+    background: #04BE02;
+    border-color: #04BE02;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-info:before{
+    display: block;;color: #fff;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-info:after{
+    background: #5bc0de;
+    border-color: #5bc0de;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-warning:before{
+    display: block;;color: #fff;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-warning:after{
+    background: #f0ad4e;
+    border-color: #f0ad4e;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-danger:before{
+    display: block;;color: #fff;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-danger:after{
+    background: #d9534f;
+    border-color: #d9534f;
+}
+.mo-ui-checkTool .mo-ui-check-circular{
+    padding-right: 1rem ;padding-left:0;
+}
+.mo-ui-checkTool.mo-ui-checkTool-text-right .mo-ui-check-circular{
+    padding-left: 1rem;padding-right: 0;
+}
+/*---------椭圆------------------*/
+.mo-ui-checkTool .mo-ui-check-ellipse:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    display: block;;
+    height:0.8rem;
+    border: 1px solid #ccc;
+    z-index: 1;
+    border-radius: 0.4rem;
+    width:1.6rem;
+    background: #f2f2f2;
+}
+.mo-ui-checkTool .mo-ui-check-ellipse:before{
+    position: absolute;
+    right: 0;
+    top:50%;
+    display: block;;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    content: '';
+    width:0.8rem;
+    height:0.8rem;
+    background: #fff;
+    z-index: 2;
+    transform: translateX(-100%) translateY(-50%);
+    -webkit-transform: translateX(-100%) translateY(-50%);
+}
+.mo-ui-checkTool.mo-ui-checkTool-text-right .mo-ui-check-ellipse:after{
+    right: auto; left: 0;
+}
+.mo-ui-checkTool.mo-ui-checkTool-text-right .mo-ui-check-ellipse:before {
+    right: auto; left: 0;
+    transform: translateX(100%) translateY(-50%);
+    -webkit-transform: translateX(100%) translateY(-50%);
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-ellipse:before{
+    background: #fff;
+    transform: translateX(0)  translateY(-50%);
+    -webkit-transform: translateX(0)  translateY(-50%);
+}
+.mo-ui-checkTool.mo-ui-checkTool-text-right input:checked + .mo-ui-check-ellipse:before{
+    transform: translateX(0)  translateY(-50%);
+    -webkit-transform: translateX(0)  translateY(-50%);
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-info:after{
+    background: #5bc0de;
+    border-color: #5bc0de;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-success:after{
+    background: #04BE02;
+    border-color: #04BE02;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-warning:after{
+    background: #f0ad4e;
+    border-color: #f0ad4e;
+}
+.mo-ui-checkTool input:checked + .mo-ui-check-danger:after{
+    background: #d9534f;
+    border-color: #d9534f;
+}
+.mo-ui-checkTool .mo-ui-check-ellipse{
+    padding-right: 1.8rem ;padding-left:0;
+}
+.mo-ui-checkTool.mo-ui-checkTool-text-right .mo-ui-check-ellipse{
+    padding-left: 1.8rem;padding-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,337 @@
+.animation.origin-LeftTop{
+    -webkit-transform-origin:0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin:0 0;
+}
+.animation.origin-RightTop{
+    -webkit-transform-origin: 100% 0;
+    -moz-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+}
+.animation.origin-LeftBottom{
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+}
+.animation.origin-RightBottom{
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+.animation.origin-CenterMiddle{
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+/*===============todo  淡出==============*/
+.fade.out-add {
+    opacity: 1;
+    -webkit-animation-name: fadeOut;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration:350ms;
+
+    -moz-animation-name: fadeOut;
+    -moz-animation-timing-function: ease;
+    -moz-animation-duration: 350ms;
+
+    animation-name: fadeOut;
+    animation-timing-function: ease;
+    animation-duration: 350ms;
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+       opacity: 0;
+    }
+}
+
+@-moz-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*===============todo  淡入==============*/
+
+.fade.in-add {
+    opacity: 0;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration:350ms;
+
+    -moz-animation-name: fadeIn;
+    -moz-animation-timing-function: ease;
+    -moz-animation-duration: 350ms;
+
+    animation-name: fadeIn;
+    animation-timing-function: ease;
+    animation-duration: 350ms;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*===============todo  上移动退出==============*/
+.move.outToTop-add,.move.outToTop-add-active{
+
+    -webkit-animation-name: moveOutToTop;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration:1200ms;
+
+    -moz-animation-name: moveOutToTop;
+    -moz-animation-timing-function: ease;
+    -moz-animation-duration: 1200ms;
+
+    animation-name: moveOutToTop;
+    animation-timing-function: ease;
+    animation-duration: 1200ms;
+}
+
+@-webkit-keyframes moveOutToTop {
+    0% {
+        -webkit-transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-100%);
+    }
+}
+
+@-moz-keyframes moveOutToTop {
+    0% {
+        -moz-transform: translateY(0);
+    }
+    100% {
+        -moz-transform: translateY(-100%);
+    }
+}
+
+@keyframes moveOutToTop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+/*===============todo  从左往右进入==============*/
+.move.inFromLeftToRight-add{
+
+    -webkit-animation-name: moveFromLeftToRight;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration:350ms;
+
+    -moz-animation-name: moveFromLeftToRight;
+    -moz-animation-timing-function: ease;
+    -moz-animation-duration: 350ms;
+
+    animation-name: moveFromLeftToRight;
+    animation-timing-function: ease;
+    animation-duration: 350ms;
+}
+
+@-webkit-keyframes moveFromLeftToRight {
+    0% {
+        -webkit-transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-moz-keyframes moveFromLeftToRight {
+    0% {
+        -moz-transform: translateX(-100%);
+    }
+    100% {
+        -moz-transform: translateX(0);
+    }
+}
+
+@keyframes moveFromLeftToRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/*===============todo  从右往左进入==============*/
+.move.inFromRightToLeft-add{
+
+    -webkit-animation-name: moveFromRightToLeft;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration:350ms;
+
+    -moz-animation-name: moveFromRightToLeft;
+    -moz-animation-timing-function: ease;
+    -moz-animation-duration: 350ms;
+
+    animation-name: moveFromRightToLeft;
+    animation-timing-function: ease;
+    animation-duration: 350ms;
+}
+
+@-webkit-keyframes moveFromRightToLeft {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-moz-keyframes moveFromRightToLeft {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(0);
+    }
+}
+
+@keyframes moveFromRightToLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/*===============todo  下移动进入==============*/
+.move.inFromTop-add{
+    -webkit-animation-name: moveInFromTop;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration:350ms;
+
+    -moz-animation-name: moveInFromTop;
+    -moz-animation-timing-function: ease;
+    -moz-animation-duration: 350ms;
+
+    animation-name: moveInFromTop;
+    animation-timing-function: ease;
+    animation-duration: 350ms;
+}
+
+@-webkit-keyframes moveInFromTop {
+    0% {
+        -webkit-transform: translateY(-100%);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+
+@-moz-keyframes moveInFromTop {
+    0% {
+        -moz-transform: translateY(-100%);
+    }
+    100% {
+        -moz-transform: translateY(0);
+    }
+}
+
+@keyframes moveInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform:translateY(0);
+    }
+}
+
+/*===============todo  强调循环下移==============*/
+.move.loopDownTop-add{
+    -webkit-animation-name: LoopMoveDownTop;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration:1.5s;
+    -webkit-animation-iteration-count:infinite;
+
+    -moz-animation-name: LoopMoveDownTop;
+    -moz-animation-timing-function: ease;
+    -moz-animation-duration: 1.5s;
+    -moz-animation-iteration-count:infinite;
+
+    animation-name: LoopMoveDownTop;
+    animation-timing-function: ease;
+    animation-duration: 1.5s;
+    animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes LoopMoveDownTop {
+    0% {
+        -webkit-transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(100%);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+
+}
+
+@-moz-keyframes LoopMoveDownTop {
+    0% {
+        -moz-transform:translateY(0);
+    }
+    50% {
+        -moz-transform:  translateY(100%);
+    }
+    100% {
+        -moz-transform:  translateY(0);
+    }
+
+}
+
+@keyframes LoopMoveDownTop {
+    0% {
+        transform:translateY(0);
+    }
+    50% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

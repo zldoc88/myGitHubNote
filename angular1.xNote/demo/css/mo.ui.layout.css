@@ -1,0 +1,169 @@
+*,*:after,*:before{box-sizing: border-box;}
+html,body{ padding: 0;margin: 0;}
+
+.mo-ui-c-0,.mo-ui-c-1,.mo-ui-c-2,.mo-ui-c-3,.mo-ui-c-4,.mo-ui-c-5,.mo-ui-c-6,.mo-ui-c-7,.mo-ui-c-8,.mo-ui-c-9,.mo-ui-c-10,.mo-ui-c-11,.mo-ui-c-12,.mo-ui-mg-7{ float: left;}
+.mo-ui-c-0,.mo-ui-td-0{ width: 0;}
+.mo-ui-c-1,.mo-ui-td-1{width: 8.33333333%}
+.mo-ui-c-2,.mo-ui-td-2{width: 16.66666667%}
+.mo-ui-c-3,.mo-ui-td-3{width: 25%}
+.mo-ui-c-4,.mo-ui-td-4{width: 33.33333333%}
+.mo-ui-c-5,.mo-ui-td-5{width: 41.66666667%}
+.mo-ui-c-6,.mo-ui-td-6{ width: 50%}
+.mo-ui-c-7,.mo-ui-td-7{width: 58.33333333%}
+.mo-ui-c-8,.mo-ui-td-8{width: 66.66666667%}
+.mo-ui-c-9,.mo-ui-td-9{ width: 75%}
+.mo-ui-c-10,.mo-ui-td-10{width: 83.33333333%}
+.mo-ui-c-11,.mo-ui-td-11{width: 91.66666667%}
+.mo-ui-c-12,.mo-ui-td-12{ width: 100%;}
+.mo-ui-mg-7{ width: 14.28571428%}
+
+
+.mo-ui-container{
+    width: 100%;display: table;;
+    font-size: 0.375rem;
+    line-height: 0.5625rem;
+    padding:15px 15px;
+    background: #fff;
+}
+.mo-ui-flexbox{
+    display: -webkit-flex;
+    display:  -webkit-box;
+    display: flex;
+    flex-direction:row; /* row | row-reverse | column | column-reverse;*/
+    -webkit-flex-direction:row; /* row | row-reverse | column | column-reverse;*/
+
+    flex-wrap: nowrap; /*nowrap 不换行。| wrap 换行 第一行在上方。| wrap-reverse 换行，第一行在下方。 ;*/
+    -webkit-flex-wrap: nowrap; /*nowrap 不换行。| wrap 换行 第一行在上方。| wrap-reverse 换行，第一行在下方。
+     ;*/
+    justify-content: center; /*flex-start 左对齐| flex-end 右对齐| center 居中| space-between 两端对齐，项目之间的间隔都相等。 | space-around 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。;*/
+    -webkit-justify-content: center; /*flex-start 左对齐| flex-end 右对齐| center 居中| space-between 两端对齐，项目之间的间隔都相等。 | space-around 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。;*/
+
+    align-content:center; /*flex-start | flex-end | center | space-between | space-around | stretch;*/
+    /*flex-start：与交叉轴的起点对齐。
+    flex-end：与交叉轴的终点对齐。
+    center：与交叉轴的中点对齐。
+    space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+    space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+    stretch（默认值）：轴线占满整个交叉轴。*/
+    -webkit-align-content:center;
+
+    box-align:center;  /*safari 支持对齐写法*/
+    -webkit-box-align:center; /*safari 支持对齐写法*/
+
+    align-items: center; /*flex-start | flex-end | center | baseline | stretch;*/
+    -webkit-align-items: center; /*flex-start | flex-end | center | baseline | stretch;*/
+    /*flex-start：交叉轴的起点对齐。
+    flex-end：交叉轴的终点对齐。
+    center：交叉轴的中点对齐。
+    baseline: 项目的第一行文字的基线对齐。
+    stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。*/
+}
+
+
+.mo-ui-flexbox .mo-ui-cellItem{
+    display: -webkit-box;
+    flex:1 1 auto;
+    box-flex:1 0 auto;
+    -webkit-box-flex:1;
+    -webkit-flex:1 1 auto;
+}
+
+.mo-ui-tablebox{
+    display:table;
+    clear: both;;
+    width: 100%;
+}
+.mo-ui-tablebox .mo-ui-cellItem{
+    display: table-cell; height: 100%; vertical-align: top;
+}
+
+.mo-ui-Title{
+    padding:0.3rem 0.4rem;display: table;;
+    width: 100%; color: #666;
+    font-weight: normal;; position: relative;;
+}
+.mo-ui-more:after{
+    content: "";
+    position: absolute;;
+    top: 50%;right: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+
+    font-size: 0.475rem;
+    display: inline-block;
+    font-family: "Ionicons";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    text-transform: none;
+}
+.mo-ui-linkbold{ margin-bottom: 0.3rem;}
+.mo-ui-linkbold .mo-ui-item{
+    width: 100%; display: table;
+    padding: 0.3rem 0 0.3rem 0;
+    position: relative;;
+    border-bottom: 1px solid #efefef;
+}
+.mo-ui-fouce{
+    margin: 0 -15px;display: block;;
+    width: auto;;
+    border-top: 1px solid #efefef;
+}
+.mo-ui-fouce .mo-ui-item{ padding: 0.4rem 15px 0.4rem; color: #333; }
+.mo-ui-fouce .mo-ui-item:active{
+    background: #ececec;
+}
+.mo-ui-fouce .mo-ui-hasArrow{
+    padding-left:15px;
+}
+.mo-ui-fouce .mo-ui-hasArrow:after{
+    content: "";
+    position: absolute;;
+    top: 50%;right: 15px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    color: #999;
+    font-size: 0.475rem;
+    display: inline-block;
+    font-family: "Ionicons";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    text-transform: none;
+}
+.mo-ui-inline-text{
+    display: inline-block;
+    padding: 0 0.1rem; font-weight: bold;;
+    font-size: 0.5rem;
+}
+.mo-ui-danger{background: #c00; color: #fff;}
+.mo-ui-default{background: #efefef; color: #999;}
+.mo-ui-warning{background: #f0ad4e; color: #fff;}
+.mo-ui-text-center{text-align: center;}
+.mo-ui-color-danger{ color: #c00;}
+
+.mo-ui-space-icon{
+    position: absolute;;
+    top:0;right: 0;
+    color: #666;
+    bottom: 0;
+    width: 1.6rem;text-align: center;display: block;;
+}
+.mo-ui-space-icon i{font-size: 1rem; color: #c00;}
+.mo-ui-space-icon:active{
+    background: #ececec;
+}
+.mo-ui-block-mainbox{
+    margin:-15px -15px 0;
+}
+
+.mo-ui-table{
+    display: table;; width: 100%;
+}
+.mo-ui-td{
+    display: table-cell;; height: 100%;
+}

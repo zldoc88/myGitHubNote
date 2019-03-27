@@ -1,0 +1,24 @@
+<div class="main-head-bar">
+    <h1 style="position: relative;">
+        拼你喜欢，拼出气质
+        <a class="mo-ui-space-icon" ng-click="showMenuBroadcast(23232);" href="javascript:;"><i class="ion-ios-more"></i></a>
+    </h1>
+</div>
+
+<div class="mo-ui-tablebox system-menu-flixe" ng-menuelemt="{{menus}}" style="display: none;">
+    <div class="handle-fouce system-menu-handle-fouce"></div>
+    <div class="content-space  system-menu-content-space">
+        <div class="mo-ui-tablebox system-menu-content"
+             ng-repeat="(k,menu) in menus"
+             ng-if="k%4==0" >
+            <div ng-repeat="(t,menu) in menus" class="mo-ui-cellItem" ng-if="(t>k-1 && t<k+4)" >
+
+                <a  href="javascript:;" ng-click="hrefTo(menu.link)"  class="mo-ui-item-menu">
+                    <span class="mo-ui-menu-icons"><i class="{{menu.icon}}"></i></span>
+                    <span class="mo-ui-menu-names">{{menu.text}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
