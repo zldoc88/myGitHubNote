@@ -1,0 +1,100 @@
+<label class="ads-row foxfix" >
+    <span class="ads-c-4">控件名称:</span>
+    <span class="ads-c-8"><input class="form-control"
+                                 oninputvalue="inputLable"
+                                 setting="{{selectedItem.inputLable}}"/></span>
+</label>
+<label class="ads-row foxfix" ng-controller="checkboxcontrl" checkboxcontrl-dir="" >
+    <span class="ads-c-6">是否显示控件名称:</span>
+    <span class="ads-c-6">
+        <label ng-click="checkedformAlign('isShowLabel',true)"><input name="isCheckAxbojectName"
+                                                                      ng-checked="selectedItem.isShowLabel"
+                                                                      type="radio" />是
+        </label>
+
+        <label ng-click="checkedformAlign('isShowLabel',false)" ><input name="isCheckAxbojectName"
+                                                                        ng-checked="!selectedItem.isShowLabel"
+                                                                        type="radio" />否
+        </label>
+    </span>
+</label>
+<label class="ads-row foxfix" ng-controller="checkboxcontrl" checkboxcontrl-dir="" >
+    <span class="ads-c-6">是否设置为必填:</span>
+    <span class="ads-c-6">
+        <label ng-click="checkedformAlign('isMust',true)"><input name="isCheckAxbojectMust"
+                                                                 ng-checked="selectedItem.isMust"
+                                                                 type="radio" />是
+        </label>
+
+        <label ng-click="checkedformAlign('isMust',false)" ><input name="isCheckAxbojectMust"
+                                                                   ng-checked="!selectedItem.isMust"
+                                                                   type="radio" />否
+        </label>
+    </span>
+</label>
+<label class="ads-row foxfix" >
+    <span class="ads-c-4">左边:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     data-slider-min="0" data-slider-max="" data-slider-step="1" data-slider-value="{{selectedItem.left}}"
+                                     change-value
+                                     setting="{{selectedItem.left}}"
+                                     itemtype="left"
+                                     type="number" step="1" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">顶部:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.top}}"
+                                     itemtype="top"
+                                     type="number" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">宽度:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.width}}"
+                                     itemtype="width"
+                                     type="number" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix" >
+    <span class="ads-c-4">高度:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.height}}"
+                                     itemtype="height"
+                                     type="number" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+
+<label class="ads-row foxfix">
+    <span class="ads-c-4">字体颜色:</span>
+    <span class="ads-c-8"><input class="form-control"  colorpicker="rgba" type="text"  ng-model="selectedItem.color"  /></span>
+</label>
+<label class="ads-row foxfix"  >
+    <span class="ads-c-4">对齐方式:</span>
+        <span class="ads-c-8"  >
+            <a href="javascript:;" class="btn btn-default check-tool-ui">
+                <input name="textAlign"
+                       ng-checked="selectedItem.textAlign=='left'"
+                       ng-click="checkedItemFontAlign('textAlign','left')" type="radio" />
+                <label><i class="fa fa-align-left"></i></label>
+            </a>
+            <a href="javascript:;" class="btn btn-default check-tool-ui">
+                <input  name="textAlign"
+                       ng-checked="selectedItem.textAlign=='center'"
+                       ng-click="checkedItemFontAlign('textAlign','center')"  type="radio" />
+                <label><i class="fa fa-align-center"></i></label>
+            </a>
+            <a href="javascript:;" class="btn btn-default check-tool-ui">
+                <input name="textAlign"
+                        ng-checked="selectedItem.textAlign=='right'"
+                        ng-click="checkedItemFontAlign('textAlign','right')"  type="radio" />
+                <label><i class="fa fa-align-right"></i></label>
+            </a>
+
+        </span>
+</label>

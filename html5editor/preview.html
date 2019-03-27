@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html ng-app="MyApp"  ng-controller='myCtrl' lang="zh-cn" >
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <title>活动促销 -管理后台</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.4 -->
+    <!--<link href="../common/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+    <!-- Font Awesome Icons -->
+    <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="scene/css/preview.css" rel="stylesheet" type="text/css" />
+
+
+
+    <script  src="js/viewport.js" ></script>
+    <script  src="js/angular.min.js" ></script>
+
+    <!--//todo app-->
+    <script src="preview/app.js"></script>
+    <script src="scene/server/server.js"></script>
+    <!--//todo controller-->
+    <script src="preview/controller/main.js"></script>
+
+    <!--//todo directive-->
+    <script src="preview/directive/main.js"></script>
+
+
+
+
+
+</head>
+<body body-directive >
+
+
+
+    <div class="ads-row page-model-list">
+        <div class="ads-row item-page" ng-repeat="(k,page) in MAP.pageMaps track by $index" style="background-color: {{page.backgroundColor}}" >
+            <div ng-repeat="line in page.line | orderBy:'-zIndex'"
+                 class="main-draw-container {{line.type}} ng-scope"
+                 draw-line=""
+                 setting="{{line}}"
+                 style="background-color: {{line.backgroundColor}};
+                                left: {{setPercent(line.left)}};
+                                opacity: {{line.opacity}};
+                                position: {{line.position}};
+                                top: {{setPxToRem(line.top)}};
+                                transform: rotate({{line.rotate}}deg);
+                                -webkit-transform: rotate({{line.rotate}}deg);
+                                width: {{setPercent(line.width)}};
+                                z-index: {{line.zIndex}};"
+                 cache-id="{{line.id}}" ><div
+                    class="view-line"
+                    style="border-bottom: {{line.borderWidth}}px {{line.borderStyle}} {{line.borderColor}};"
+                    ></div></div>
+
+            <div ng-repeat="square in page.square | orderBy:'-zIndex'"
+                 style="background-color: {{square.backgroundColor}};
+                                border-color: {{square.borderColor}};
+                                border-radius: {{square.borderRadius}};
+                                border-style: {{square.borderStyle}};
+                                border-width: {{setPxToRem(square.borderWidth)}};
+                                height: {{setPxToRem(square.height)}};
+                                left: {{setPercent(square.left)}};
+                                opacity: {{square.opacity}};
+                                position: {{square.position}};
+                                top: {{setPxToRem(square.top)}};
+                                transform: rotate({{square.rotate}}deg);
+                                -webkit-transform: rotate({{square.rotate}}deg);
+                                width: {{setPercent(square.width)}};
+                                z-index: {{square.zIndex}};"
+                 class="main-draw-container {{square.type}} ng-scope "
+                 ng-class="isChooseMe(square.id)"
+                 draw-square=""
+                 setting="{{square}}"
+                 cache-id="{{square.id}}" ></div>
+
+            <div ng-repeat="txt in page.txt | orderBy:'-zIndex'"
+                 style="left: {{setPercent(txt.left)}};
+                            opacity: {{txt.opacity}};
+                            position: {{txt.position}};
+                            top: {{setPxToRem(txt.top)}};
+                            transform: rotate({{txt.rotate}}deg);
+                            -webkit-transform: rotate({{txt.rotate}}deg);
+                            z-index: {{txt.zIndex}};
+                            width: {{setPercent(txt.width)}};
+                            height: {{setPxToRem(txt.height)}}"
+                 class="main-draw-container {{txt.type}} ng-scope "
+                 ng-class="isChooseMe(txt.id)"
+                 draw-txt=""
+                 setting="{{txt}}"
+                 cache-id="{{txt.id}}" >{{txt.content}}</div>
+
+            <div ng-repeat="formData in page.formData | orderBy:'-zIndex'"
+                 style="left: {{setPercent(formData.left)}};
+                            position: {{formData.position}};
+                            top: {{setPxToRem(formData.top)}};
+                            z-index: {{formData.zIndex}};
+                            width: {{setPercent(formData.width)}};
+                            color: {{formData.color}};
+                            height: {{setPxToRem(formData.height)}}"
+                 class="main-draw-container {{formData.type}} ng-scope "
+                 ng-class="isChooseMe(formData.id)"
+                 draw-formdata=""
+                 setting="{{formData}}"
+                 cache-id="{{formData.id}}" >
+
+                    <div class="ads-row" ng-if="formData.tagName=='input'&&formData.tagType=='text'">
+                        <span class="tool-input-label" ng-if="formData.isShowLabel" >{{formData.inputLable}}：</span>
+                        <input class="tool-input-inputs" placeholder="请输入{{formData.inputLable}}" type="text" />
+                    </div>
+                    <div class="ads-row" ng-if="formData.tagName=='input'&&formData.tagType!='text'">
+                        <span class="tool-input-label" ng-if="formData.isShowLabel" >{{formData.inputLable}}：</span>
+                        <span class="tool-input-inputs">
+                            <label  ng-repeat="(i,inputs) in formData.list" >
+                                <input value="{{inputs.label}}" type="{{formData.tagType}}" />{{inputs.label}}
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="ads-row" ng-if="formData.tagName=='select'">
+                        <span class="tool-input-label" ng-if="formData.isShowLabel" >{{formData.inputLable}}：</span>
+                        <span class="tool-input-inputs">
+                            <select>
+                                <option ng-repeat="(i,inputs) in formData.list" value="{{inputs.label}}" >{{inputs.label}}</option>
+                            </select>
+                        </span>
+                    </div>
+
+                    <div class="ads-row" ng-if="formData.tagName=='textarea'">
+                        <span class="tool-input-label" ng-if="formData.isShowLabel" >{{formData.inputLable}}：</span>
+                        <textarea class="tool-input-inputs" placeholder="请输入{{formData.inputLable}}"  ></textarea>
+                    </div>
+
+                 </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+var app = angular.module('MyApp',['colorpicker.module','ui.bootstrap']);

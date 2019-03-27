@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html ng-app="MyApp" pubile-event  ng-controller='myCtrl' lang="zh-cn" >
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <title>活动促销 -管理后台</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.4 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome Icons -->
+    <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="scene/css/edit.css" rel="stylesheet" type="text/css" />
+    <link href="scene/css/colorpicker.css" rel="stylesheet" type="text/css" />
+
+
+
+    <script  src="js/viewport.js" ></script>
+
+    <script  src="js/angular.min.js" ></script>
+    <script  src="js/ui-bootstrap-tpls-1.2.5.min.js" ></script>
+    <script  src="js/bootstrap-colorpicker-module.min.js" ></script>
+
+    <!--//todo app-->
+    <script src="scene/app.js"></script>
+    <script src="scene/server/server.js"></script>
+    <!--//todo controller-->
+    <script src="scene/controller/main.js"></script>
+    <script src="scene/controller/mainQuick.js"></script>
+    <script src="scene/controller/sence.js"></script>
+    <script src="scene/controller/ModalDemoCtrl.js"></script>
+
+    <!--//todo directive-->
+    <script src="scene/directive/main.js"></script>
+    <script src="scene/directive/sence.event.js"></script>
+    <script src="scene/directive/pubile.event.js"></script>
+    <script src="scene/directive/move.event.js"></script>
+    <script src="scene/directive/toolmanger.js"></script><!--工具类型-->
+    <script src="scene/directive/toolpick.js"></script><!--工具类型-->
+    <script src="scene/directive/sence.render.js"></script><!--场景-->
+    <script src="scene/directive/draw.tool.js"></script><!--场景-->
+
+    <script src="scene/directive/move.component.js"></script><!--移动组件-->
+    <script src="scene/directive/seResize-b.js"></script><!--左上改变组件大小-->
+    <script src="scene/directive/seResize-t.js"></script><!--左上改变组件大小-->
+    <script src="scene/directive/swResize-t.js"></script><!--右上改变组件大小-->
+    <script src="scene/directive/swResize-b.js"></script><!--左下改变组件大小-->
+    <script src="scene/directive/nsResize-t.js"></script><!--上改变组件高-->
+    <script src="scene/directive/nsResize-b.js"></script><!--下改变组件高-->
+    <script src="scene/directive/ewResize-l.js"></script><!--下改变组件高-->
+    <script src="scene/directive/ewResize-r.js"></script><!--下改变组件高-->
+    <script src="scene/directive/comp-rotate.js"></script><!--旋转-->
+
+    <script src="scene/directive/change-value.js"></script><!--旋转-->
+    <script src="scene/directive/selete-init.js"></script><!--旋转-->
+    <script src="scene/directive/oninput.value.js"></script><!--旋转-->
+
+    <script src="scene/directive/toolTpye.line.js"></script><!--场景-->
+    <script src="scene/directive/toolTpye.square.js"></script><!--场景-->
+    <script src="scene/directive/toolTpye.txt.js"></script><!--场景-->
+    <script src="scene/directive/toolTpye.formData.js"></script><!--场景-->
+
+
+
+
+
+</head>
+<body body-directive >
+
+<div id="header">
+    <div class="ads-row main-menu-ctr text-center">
+
+        <a class="btn btn-default" ng-click="saveformData()"  href="javascript:;"><i class="fa fa-save"></i> 保存</a>
+        <div ng-controller="ModalDemoCtrl" style="display: inline-block;">
+            <script type="text/ng-template" id="myModalContent.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">预览</h3>
+                </div>
+                <div class="modal-body">
+                    <div style="width: 322px; overflow: hidden; height: 568px;border: 1px solid #ddd;">
+                        <iframe  src="preview.html" height="568" width="320" align=middle marginwidth=0 marginheight=0  frameborder=no  ></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+                </div>
+            </script>
+
+            <a   href="javascript:;" class="btn btn-default" ng-click="open()">预览</a>
+        </div>
+        <a class="btn btn-default" href="javascript:;"><i class="fa fa-send-o"></i> 发布</a>
+        <a class="btn btn-default" href="javascript:;"><i class="fa fa-sign-out"></i> 退出</a>
+
+    </div>
+</div>
+
+<!--todo 工具选择面板-->
+
+<div id="controler-main-quick"
+     class="select-tool"
+     style="right: 180px;"
+     ng-class="{true:'tool-hidden',false:'tool-show'}[hidenTool]"
+     window-type="tool-window"
+     ng-controller="mainQuick"
+     move-event
+        >
+    <h3>工具</h3>
+    <div class="ads-row tool-box-icon" tool-manger ></div>
+</div>
+
+<!--todo 舞台-->
+<div id="sence"
+     class="cursor-{{ActiveToolType}}"
+     ng-controller="sence"
+     sence-dir
+        >
+    <div class="table"  >
+        <div class="td" style="height: 100%;">
+            <div id="layer-main" right-clickprivate="private" sence-render  setting="{{ActivePageData}}" style="background-color: {{ActivePageData.backgroundColor}}" >
+
+                <div ng-repeat="line in ActivePageData.line | orderBy:'-zIndex'"
+                     class="main-draw-container {{line.type}} ng-scope"
+                     ng-class="isChooseMe(line.id)"
+                     draw-line=""
+                     setting="{{line}}"
+                     style="background-color: {{line.backgroundColor}};
+                                left: {{setPxToRem(line.left)}};
+                                opacity: {{line.opacity}};
+                                position: {{line.position}};
+                                top: {{setPxToRem(line.top)}};
+                                transform: rotate({{line.rotate}}deg);
+                                -webkit-transform: rotate({{line.rotate}}deg);
+                                width: {{setPxToRem(line.width)}};
+                                z-index: {{line.zIndex}};"
+                     cache-id="{{line.id}}" ><div
+                        class="view-line"
+                        style="border-bottom: {{line.borderWidth}}px {{line.borderStyle}} {{line.borderColor}};"
+                        ></div></div>
+
+                <div ng-repeat="square in ActivePageData.square | orderBy:'-zIndex'"
+                     style="background-color: {{square.backgroundColor}};
+                                border-color: {{square.borderColor}};
+                                border-radius: {{square.borderRadius}};
+                                border-style: {{square.borderStyle}};
+                                border-width: {{setPxToRem(square.borderWidth)}};
+                                height: {{setPxToRem(square.height)}};
+                                left: {{setPxToRem(square.left)}};
+                                opacity: {{square.opacity}};
+                                position: {{square.position}};
+                                top: {{setPxToRem(square.top)}};
+                                transform: rotate({{square.rotate}}deg);
+                                -webkit-transform: rotate({{square.rotate}}deg);
+                                width: {{setPxToRem(square.width)}};
+                                z-index: {{square.zIndex}};"
+                     class="main-draw-container {{square.type}} ng-scope "
+                     ng-class="isChooseMe(square.id)"
+                     draw-square=""
+                     setting="{{square}}"
+                     cache-id="{{square.id}}" ></div>
+
+                <div ng-repeat="txt in ActivePageData.txt | orderBy:'-zIndex'"
+                     style="left: {{setPxToRem(txt.left)}};
+                            opacity: {{txt.opacity}};
+                            position: {{txt.position}};
+                            top: {{setPxToRem(txt.top)}};
+                            transform: rotate({{txt.rotate}}deg);
+                            -webkit-transform: rotate({{txt.rotate}}deg);
+                            z-index: {{txt.zIndex}};
+                            width: {{setPxToRem(txt.width)}};
+                            height: {{setPxToRem(txt.height)}}"
+                     class="main-draw-container {{txt.type}} ng-scope "
+                     ng-class="isChooseMe(txt.id)"
+                     draw-txt=""
+                     setting="{{txt}}"
+                     cache-id="{{txt.id}}" ></div>
+
+                <div ng-repeat="formData in ActivePageData.formData | orderBy:'-zIndex'"
+                     style="left: {{setPxToRem(formData.left)}};
+                            position: {{formData.position}};
+                            top: {{setPxToRem(formData.top)}};
+                            z-index: {{formData.zIndex}};
+                            width: {{setPxToRem(formData.width)}};
+                            color: {{formData.color}};
+                            height: {{setPxToRem(formData.height)}}"
+                     class="main-draw-container {{formData.type}} ng-scope "
+                     ng-class="isChooseMe(formData.id)"
+                     draw-formdata=""
+                     setting="{{formData}}"
+                     cache-id="{{formData.id}}" ></div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--todo 页面选择选择面板-->
+<div id="controler-main-page"
+     class="setting-tool"
+     window-type="tool-window"
+     ng-class="{true:'tool-hidden',false:'tool-show'}[hidenTool]"
+
+      >
+    <h3>页面面板</h3>
+    <div class="page-layout-preview-list">
+
+        <div ng-repeat="(k,page) in MAP['pageMaps'] track by $index"
+             class="table item {{chooseActivePageIndex == k? 'active' : ''}}">
+            <a class="td td-2" href="javascript:;" ng-click="hidePage(k)" ><i ng-class="{true:'ion-eye',false:'ion-eye-disabled'}[page.cansee]" style="font-size: 20px;" class=""></i></a>
+            <div class="td td-8" ng-click="choosePage(k)">
+                <div class="ads-row page-name">页面 {{k+1}}</div>
+            </div>
+            <div class="td td-2 text-center" ng-click="delePage(k ,chooseActivePageIndex == k)" ><i class="ion-close"></i></div>
+        </div>
+
+    </div>
+    <a href="javascript:;" ng-click="addPage()" class="footer-btn">+ 添加页面</a>
+</div>
+
+<!--todo 属性设置面板-->
+<div id="controler-main-pageOptions"
+     class="setting-tool lg-setting"
+     style="left: 160px;top: 40px;"
+     window-type="tool-window"
+     ng-class="{true:'tool-hidden',false:'tool-show'}[hidenTool]"
+
+     move-event>
+    <h3>全局属性设置</h3>
+    <label class="ads-row foxfix">
+        <span class="ads-c-4">背景色:</span>
+        <span class="ads-c-6"><input class="form-control" colorpicker="rgba" type="text"  ng-model="ActivePageData.backgroundColor" /></span>
+    </label>
+    <label class="ads-row foxfix">
+        <span class="ads-c-4">背景图片:</span>
+        <span class="ads-c-4"><a class="btn btn-default" href="javascript:;" >选择图片</a></span>
+        <span class="ads-c-4">暂无</span>
+    </label>
+    <label class="ads-row foxfix">
+        <span class="ads-c-5">页面切换动画:</span>
+        <span class="ads-c-7">
+            <select class="form-control">
+                <option>无</option>
+                <option>左右滑动</option>
+                <option>上下滑动</option>
+            </select>
+         </span>
+    </label>
+    <label class="ads-row foxfix">
+        <span class="ads-c-4">背景音乐:</span>
+        <span class="ads-c-4"><a class="btn btn-default" href="javascript:;" >选择音乐</a></span>
+        <span class="ads-c-4">暂无</span>
+    </label>
+
+</div>
+
+<!--todo 属性设置面板-->
+<div id="controler-main-options"
+     class="setting-tool lg-setting"
+     style="left: 160px;top: 220px;"
+     window-type="tool-window"
+     ng-class="{true:'tool-hidden',false:'tool-show'}[hidenTool]"
+        ng-show="selectedItem!=null&&ActiveToolType=='pick'"
+     move-event>
+    <h3>属性设置</h3>
+    <div class="ads-row" ng-if="selectedItem.type=='line'" editer-line></div>
+    <div class="ads-row" ng-if="selectedItem.type=='square'" editer-square></div>
+    <div class="ads-row" ng-if="selectedItem.type=='txt'" editer-txt></div>
+    <div class="ads-row" ng-if="selectedItem.type=='formData'&&selectedItem.tagName=='input'&&selectedItem.tagType=='text'" editer-text></div>
+    <div class="ads-row" ng-if="selectedItem.type=='formData'&&selectedItem.tagName=='input'&&selectedItem.tagType=='radio'" editer-radio></div>
+    <div class="ads-row" ng-if="selectedItem.type=='formData'&&selectedItem.tagName=='input'&&selectedItem.tagType=='checkbox'" editer-checkbox ></div>
+    <div class="ads-row" ng-if="selectedItem.type=='formData'&&selectedItem.tagName=='select'" editer-select ></div>
+    <div class="ads-row" ng-if="selectedItem.type=='formData'&&selectedItem.tagName=='textarea'" editer-textarea ></div>
+
+</div>
+
+
+<!--todo 动画面板-->
+<div id="controler-main-animation"
+     class="setting-tool lg-setting"
+     style="right: 260px;top: 220px;"
+     window-type="tool-window"
+     ng-class="{true:'tool-hidden',false:'tool-show'}[hidenTool]"
+
+     move-event>
+    <h3>动画设置</h3>
+    待续
+</div>
+
+
+
+
+<!--todo 动画轨迹面板-->
+<div id="controler-main-animation-guide"
+     class="setting-tool lg-setting"
+     style="right: 260px;top:340px;"
+     window-type="tool-window"
+     ng-class="{true:'tool-hidden',false:'tool-show'}[hidenTool]"
+
+     move-event>
+    <h3>动画轨迹</h3>
+    待续
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

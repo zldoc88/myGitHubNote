@@ -1,0 +1,135 @@
+<label class="ads-row foxfix" >
+    <span class="ads-c-4">左边:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     data-slider-min="0" data-slider-max="" data-slider-step="1" data-slider-value="{{selectedItem.left}}"
+                                     change-value
+                                     setting="{{selectedItem.left}}"
+                                     itemtype="left"
+                                     type="number" step="1" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">顶部:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.top}}"
+                                     itemtype="top"
+                                     type="number" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">宽度:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.width}}"
+                                     itemtype="width"
+                                     type="number" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix" >
+    <span class="ads-c-4">高度:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.height}}"
+                                     itemtype="height"
+                                     type="number" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">旋转度数:</span>
+        <span class="ads-c-6"><input class="form-control"
+                                     change-value
+                                     setting="{{selectedItem.rotate}}"
+                                     itemtype="rotate"
+                                     step="1" max="360" min="-360"  type="number" /></span>
+    <span class="ads-c-2 text-center">deg</span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">字体大小:</span>
+    <span class="ads-c-6"><input class="form-control"
+                                 change-value
+                                 setting="{{selectedItem.fontSize}}"
+                                 itemtype="fontSize"
+                                 type="number" min="12" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+<label class="ads-row foxfix">
+    <span class="ads-c-4">行高:</span>
+    <span class="ads-c-6"><input class="form-control"
+                                 change-value
+                                 setting="{{selectedItem.lineHeight}}"
+                                 itemtype="lineHeight"
+                                 type="number" /></span>
+    <span class="ads-c-2 text-center">px</span>
+</label>
+
+<label class="ads-row foxfix">
+    <span class="ads-c-4">字体颜色:</span>
+    <span class="ads-c-8"><input class="form-control"  colorpicker="rgba" type="text"  ng-model="selectedItem.color"  /></span>
+</label>
+<label class="ads-row foxfix"  >
+    <span class="ads-c-4">对齐方式:</span>
+        <span class="ads-c-8"  >
+            <a href="javascript:;" class="btn btn-default check-tool-ui">
+                <input name="textAlign"
+                       ng-checked="selectedItem.textAlign=='left'"
+                       ng-click="checkedItemFontAlign('textAlign','left')" type="radio" />
+                <label><i class="fa fa-align-left"></i></label>
+            </a>
+            <a href="javascript:;" class="btn btn-default check-tool-ui">
+                <input  name="textAlign"
+                       ng-checked="selectedItem.textAlign=='center'"
+                       ng-click="checkedItemFontAlign('textAlign','center')"  type="radio" />
+                <label><i class="fa fa-align-center"></i></label>
+            </a>
+            <a href="javascript:;" class="btn btn-default check-tool-ui">
+                <input name="textAlign"
+                        ng-checked="selectedItem.textAlign=='right'"
+                        ng-click="checkedItemFontAlign('textAlign','right')"  type="radio" />
+                <label><i class="fa fa-align-right"></i></label>
+            </a>
+
+        </span>
+</label>
+<label class="ads-row foxfix" ng-controller="settingfont"  >
+    <span class="ads-c-4">字体类型:</span>
+        <span class="ads-c-8"  >
+            <a href="javascript:;" class="btn btn-default check-tool-ui">
+                <input class="clearAllfontStyle"
+                       ng-model="isCheckAll"
+                       ng-checked="selectedItem.textDecoration=='none'&&selectedItem.fontStyle=='none'&&selectedItem.fontWeight=='none'"
+                       ng-click="checkedItem(isCheckAll)" type="checkbox" />
+                <label><i class="fa fa-undo"></i></label>
+            </a>
+            <a href="javascript:;" class="btn btn-default check-tool-ui">
+                <input value="underline"
+                       name="textDecoration"
+                       ng-checked="selectedItem.textDecoration=='underline'"
+                       ng-model="textDecoration"
+                       ng-click="checkedItem(textDecoration,'textDecoration','underline')" class="chuange-font-u" type="radio" />
+                <label><i class="fa fa-underline"></i></label>
+            </a>
+            <a href="javascript:;" class="btn btn-default check-tool-ui">
+                <input  ng-model="fontStyle"
+                        ng-checked="selectedItem.fontStyle=='italic'"
+                        name="fontStyle"
+                        value="italic"
+                        ng-click="checkedItem(fontStyle,'fontStyle','italic')" class="chuange-font-i" type="checkbox" />
+                <label><i class="fa fa-italic"></i></label>
+            </a>
+            <a href="javascript:;" class="btn btn-default check-tool-ui">
+                <input value="line-through"
+                       ng-model="textDecoration"
+                       ng-checked="selectedItem.textDecoration=='line-through'"
+                       ng-click="checkedItem(textDecoration,'textDecoration','line-through')" name="textDecoration" class="chuange-font-th" type="radio" />
+                <label><i class="fa fa-strikethrough"></i></label>
+            </a>
+            <a href="javascript:;" class="btn btn-default check-tool-ui">
+                <input name="fontWeight" ng-model="fontWeight"
+                       ng-checked="selectedItem.fontWeight=='bold'"
+                       value="bold"
+                       ng-click="checkedItem(fontWeight,'fontWeight','bold')" class="chuange-font-bold"  type="checkbox" />
+                <label><i class="fa fa-bold"></i></label>
+            </a>
+        </span>
+</label>
