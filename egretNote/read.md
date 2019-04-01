@@ -3,6 +3,8 @@ Exml EgretWing 可视编辑模式
 * Draw DragonBones to stage
 
 code：
+
+
         var dragonbonesData = RES.getRes('ske_json');
         var textureData = RES.getRes( 'tex_json');
         var texture2 = RES.getRes('tex_png');
@@ -62,6 +64,8 @@ b. 边框插槽 （用于碰撞检测）
 
 *导出图片---------------<br>
        ```javascript
+       code
+       
         var rt: egret.RenderTexture = new egret.RenderTexture();   //建立缓冲画布
         rt.drawToTexture(page, new egret.Rectangle(0, 0,stage.width,stage.height));  //将对象画到缓冲画布上（可指定画对象的某个区域，或画整个）
         var imageBase64:string = rt.toDataURL("image/png");
