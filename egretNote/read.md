@@ -54,3 +54,8 @@ code：
          b.anchorOffsetX = b.width/2;
          b.anchorOffsetY = b.height/2;
          Slot.setDisplay( b );
+
+
+* DragonBonesPro 插槽类型备注
+a. 普通插槽 (用于资源显示)
+b. 边框插槽 （用于碰撞检测）
