@@ -61,8 +61,9 @@ a. 普通插槽 (用于资源显示)
 b. 边框插槽 （用于碰撞检测）
 
 *导出图片---------------<br>
-       `
+       ```
         var rt: egret.RenderTexture = new egret.RenderTexture();   //建立缓冲画布
         rt.drawToTexture(page, new egret.Rectangle(0, 0,stage.width,stage.height));  //将对象画到缓冲画布上（可指定画对象的某个区域，或画整个）
         var imageBase64:string = rt.toDataURL("image/png");
-        `
+        
+        ```
