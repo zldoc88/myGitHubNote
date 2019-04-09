@@ -193,7 +193,6 @@ class Main extends eui.UILayer {
        // console.log(r,_target);
         return;
 
-
     }
 
     /**
@@ -219,7 +218,7 @@ class Main extends eui.UILayer {
         this.demoDragonBonesArmaturedisplay.debugDraw = true;
 
         var slotbody =this.demoDragonBonesArmaturedisplay.armature.getSlot("body");
-        this.slotBodyDefaultDisplay=slotbody.rawDisplay;
+        this.slotBodyDefaultDisplay=slotbody.rawDisplay; //缓存默认皮肤
         
 
         this.addChild(this.demoDragonBonesArmaturedisplay);
@@ -231,22 +230,7 @@ class Main extends eui.UILayer {
         this.demoDragonBonesArmaturedisplay.animation.timeScale = 0.5;
 
        // this.demoDragonBonesArmaturedisplay.armature.inheritAnimation = false;
-    
-        /**
-         * this.demoDragonBonesArmature.armatureData.aabb
-         * 龙骨设计里面 龙骨主骨架坐标属性读取
-         */
-            // console.log('width',this.demoDragonBonesArmature.getSlot());
-       // console.log('width',this.demoDragonBonesArmature);
-      //  console.log('armature1=',this.demoDragonBonesArmaturedisplay.armature);
-      //  console.log('armature1=',this.demoDragonBonesArmature.armatureData.aabb);
-      //  console.log('armature2=',this.demoDragonBonesArmature);
-        //console.log('BoundingBoxData',this.demoDragonBonesFactory.getDragonBonesData('changeSkin') );
-   
-       // t.x = 251;
-       // t.y = 251;
 
-     //   dragonBones.WorldClock.clock.add( this.demoDragonBonesArmaturedisplay2.armature);
     }
 
     /**
@@ -328,8 +312,7 @@ class Main extends eui.UILayer {
         if(this.isChanged){
             this.isChanged = false;
             var slotbody =this.demoDragonBonesArmaturedisplay.armature.getSlot("body");
-            slotbody.setDisplay( this.slotBodyDefaultDisplay );
-            
+            slotbody.setDisplay( this.slotBodyDefaultDisplay );//还原默认皮肤
             return;
         }
 
