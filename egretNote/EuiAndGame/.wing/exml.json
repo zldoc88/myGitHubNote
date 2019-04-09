@@ -1,0 +1,21 @@
+{
+  "16a00c64b62": {
+    "path": "itemTool.ts",
+    "class": "itemTool",
+    "parentPath": "",
+    "bindingDataTestObj": [],
+    "backgroundType": "user",
+    "backgroundAlpha": "0"
+  },
+  "global": {
+    "globalBindingDataTestObj": [],
+    "globalAutoLayerMarkEnable": true,
+    "globalBackgroundAlpha": 100,
+    "globalBackgroundX": 0,
+    "globalBackgroundY": 0,
+    "globalBackgroundWidth": -1,
+    "globalBackgroundHeight": -1,
+    "globalBackgroundColor": "#ffffff",
+    "globalBackgroundImage": ""
+  }
+}

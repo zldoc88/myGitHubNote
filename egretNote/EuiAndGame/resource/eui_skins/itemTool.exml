@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="itemToolSkin" width="640" height="200" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*" >
+	<w:Declarations>
+		<tween:TweenGroup id="g">
+			 
+			<tween:TweenItem target="{pic}">
+				<tween:props>
+					<e:Object loop="{true}" />
+				</tween:props>
+				
+				<tween:Set/>
+				<tween:To duration="1000" ease="cubicOut">
+					<tween:props>
+						<e:Object scaleX="{0.75}" scaleY="{0.75}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="1000">
+					<tween:props>
+						<e:Object scaleX="{1}" scaleY="{1}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{title}">
+				<tween:Set>
+					<tween:props>
+						<e:Object x="{640}" alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500">
+					<tween:props>
+						<e:Object x="{225}" alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{content}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="1000">
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+	<w:Config id="16a00c64b62" ></w:Config>
+	<e:Group width="640" height="200" x="0" y="0">
+		<e:Button id="itemBtn" label="操作" x="225" y="103" width="120" height="46"/>
+		<e:Label id="title" text="动态标题" x="225" y="24"/>
+		<e:Label id="content" text="缩略内容" x="225" y="68.36" size="20" textColor="0xbcbcbc"/>
+		<e:Image id="pic" width="150" height="150" x="100" y="100" anchorOffsetX="75" anchorOffsetY="75"/>
+	</e:Group>
+</e:Skin>
