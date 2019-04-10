@@ -11,6 +11,7 @@
 	],
 	"game": [
 		"bin-debug/AssetAdapter.js",
+		"bin-debug/dragboneAndEuiDemo.js",
 		"bin-debug/itemTool.js",
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
