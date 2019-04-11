@@ -426,4 +426,5 @@ declare module 'built-in' {
 
         constructor(option?: MergeEuiJsonPluginOptions);
     }
+
 }

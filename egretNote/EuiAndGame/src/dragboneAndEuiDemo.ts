@@ -17,7 +17,7 @@ class dragoneAndEuiDemo extends eui.Group{
     public oncomplect(){
 
         let sky = this.createBitmapByName("bg_jpg");
-        //this.addChild(sky);
+     //   this.addChild(sky);
         let stageW = this.stage.stageWidth;
         let stageH = this.stage.stageHeight;
         sky.width = stageW;
@@ -49,19 +49,29 @@ class dragoneAndEuiDemo extends eui.Group{
         this.addChild(testimg2);
     
         testimg.setItemGrerger('======','***************');
-        testimg2.setItemGrerger('=测试第二个==','------内容----');
+        testimg2.setItemGrerger('=测试第二个=='
+            ,`Egret 加载资源主要使用 egret.HttpRequest 类。该类封装了在异步加载资源和通讯方面作为 H5 标准的 XMLHttpRequest 对象。本节讲解的主要是加载静态文件，分为两种类型：文本和二进制数据。加载静态文件的特点是可以进行进度跟踪。分为两种类型：文本和二进制数据。加载静态文件的特点是可以进行进度跟踪。`);
 
         testimg.y=250;
         testimg2.y=450;
 
+        //textHeight
+
+
         //按钮以及事件--------------------------------------------------------------------
         let button = new eui.Button();
         button.label = "Click!";
-        button.horizontalCenter = 0;
-        button.verticalCenter = 0;
+         button.horizontalCenter = 0; //水平居中
+        // button.verticalCenter = 0; //垂直居中
         this.addChild(button);
+        button.y =testimg2.y + testimg2.mesMaxHeight;
+
+        console.log('active',testimg2.y,testimg2.mesMaxHeight);
+
+
         button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
         this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.testPoint, this);
+
 
 
 

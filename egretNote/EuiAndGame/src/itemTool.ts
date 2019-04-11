@@ -15,9 +15,11 @@ class itemTool extends eui.Component implements  eui.UIComponent {
 	}
 
 
+	public mesMaxHeight;
 	protected title;
 	protected content;
 	protected pic;
+	protected itemBtn;
 	protected g;
 
 	public setItemGrerger(strname ,strvalue){
@@ -36,7 +38,18 @@ class itemTool extends eui.Component implements  eui.UIComponent {
 		// 		<e:Object loop="{true}" />
 		// </tween:props>
 
-		//console.log('this.g',this.g);
+		/**
+		 * 动态布局 ---------------------------------------------------------------
+		 */
+		//lineSpacing 5
+		//numLines 8
+		//textHeight 195 
+		//size 20
+		//160 + 35
+		var maxTextHeight = this.content.textHeight;
+		this.itemBtn.y = ( this.content.y  +maxTextHeight  ) + 20;
+		this.mesMaxHeight = this.itemBtn.y + this.itemBtn.height;
+		console.log('this.mesMaxHeight',this.mesMaxHeight ,this.itemBtn.height);
 		this.g.play(); //播放动画组
 	}
 	

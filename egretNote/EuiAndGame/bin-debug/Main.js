@@ -161,6 +161,7 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
+        // console.log(JSZip);
         //demo  1 ================================
         this.addChild(new dragoneAndEuiDemo());
     };

@@ -58,7 +58,7 @@ var dragoneAndEuiDemo = (function (_super) {
     };
     dragoneAndEuiDemo.prototype.oncomplect = function () {
         var sky = this.createBitmapByName("bg_jpg");
-        //this.addChild(sky);
+        //   this.addChild(sky);
         var stageW = this.stage.stageWidth;
         var stageH = this.stage.stageHeight;
         sky.width = stageW;
@@ -83,15 +83,18 @@ var dragoneAndEuiDemo = (function (_super) {
         this.addChild(testimg);
         this.addChild(testimg2);
         testimg.setItemGrerger('======', '***************');
-        testimg2.setItemGrerger('=测试第二个==', '------内容----');
+        testimg2.setItemGrerger('=测试第二个==', "Egret \u52A0\u8F7D\u8D44\u6E90\u4E3B\u8981\u4F7F\u7528 egret.HttpRequest \u7C7B\u3002\u8BE5\u7C7B\u5C01\u88C5\u4E86\u5728\u5F02\u6B65\u52A0\u8F7D\u8D44\u6E90\u548C\u901A\u8BAF\u65B9\u9762\u4F5C\u4E3A H5 \u6807\u51C6\u7684 XMLHttpRequest \u5BF9\u8C61\u3002\u672C\u8282\u8BB2\u89E3\u7684\u4E3B\u8981\u662F\u52A0\u8F7D\u9759\u6001\u6587\u4EF6\uFF0C\u5206\u4E3A\u4E24\u79CD\u7C7B\u578B\uFF1A\u6587\u672C\u548C\u4E8C\u8FDB\u5236\u6570\u636E\u3002\u52A0\u8F7D\u9759\u6001\u6587\u4EF6\u7684\u7279\u70B9\u662F\u53EF\u4EE5\u8FDB\u884C\u8FDB\u5EA6\u8DDF\u8E2A\u3002\u5206\u4E3A\u4E24\u79CD\u7C7B\u578B\uFF1A\u6587\u672C\u548C\u4E8C\u8FDB\u5236\u6570\u636E\u3002\u52A0\u8F7D\u9759\u6001\u6587\u4EF6\u7684\u7279\u70B9\u662F\u53EF\u4EE5\u8FDB\u884C\u8FDB\u5EA6\u8DDF\u8E2A\u3002");
         testimg.y = 250;
         testimg2.y = 450;
+        //textHeight
         //按钮以及事件--------------------------------------------------------------------
         var button = new eui.Button();
         button.label = "Click!";
-        button.horizontalCenter = 0;
-        button.verticalCenter = 0;
+        button.horizontalCenter = 0; //水平居中
+        // button.verticalCenter = 0; //垂直居中
         this.addChild(button);
+        button.y = testimg2.y + testimg2.mesMaxHeight;
+        console.log('active', testimg2.y, testimg2.mesMaxHeight);
         button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
         this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.testPoint, this);
     };

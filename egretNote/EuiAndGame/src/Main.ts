@@ -101,6 +101,7 @@ class Main extends eui.UILayer {
      */
     protected createGameScene(): void {
 
+       // console.log(JSZip);
         //demo  1 ================================
         this.addChild(new dragoneAndEuiDemo());
         

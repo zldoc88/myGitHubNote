@@ -2,10 +2,16 @@
 ///<reference path="api.d.ts"/>
 
 import * as path from 'path';
-import { UglifyPlugin, IncrementCompilePlugin, CompilePlugin, ManifestPlugin, ExmlPlugin, EmitResConfigFilePlugin, TextureMergerPlugin, RenamePlugin } from 'built-in';
+import { UglifyPlugin, IncrementCompilePlugin, CompilePlugin, ManifestPlugin, ExmlPlugin, EmitResConfigFilePlugin, TextureMergerPlugin, RenamePlugin ,ZipPlugin  } from 'built-in';
 import { WxgamePlugin } from './wxgame/wxgame';
 import { BricksPlugin } from './bricks/bricks';
 import { CustomPlugin } from './myplugin';
+import { MyZipCode } from './myzipcode/myzipcode';
+
+//import {JSZip} from '../jszip/libsrc/src/jszip.d';
+//import * as JSZip from '../jszip/libsrc/src/jszip.d';
+//var JSZip = require('../jszip/libsrc/src/jszip.min');
+//console.log('JsZipPlugin',JSZip);
 
 const config: ResourceManagerConfig = {
 
@@ -46,10 +52,13 @@ const config: ResourceManagerConfig = {
                         verbose: true, hash: 'crc32', matchers: [
                             { from: "**/*.js", to: "[path][name]_[hash].[ext]" }
                         ]
-                    }),
-                    new ManifestPlugin({ output: "manifest.json" })
+                    })
+
+                    ,new ManifestPlugin({ output: "manifest.json" })
                 ]
+
             }
+
         }
         else {
             throw `unknown command : ${params.command}`

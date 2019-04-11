@@ -9,8 +9,9 @@
             "es2015.promise"
         ],
         "types": []
-    },
-    "include": [
+    }
+
+    ,"include": [
         "src",
         "libs"
     ]

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="itemToolSkin" width="640" height="200" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*" >
+<e:Skin class="itemToolSkin" width="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*" >
 	<w:Declarations>
 		<tween:TweenGroup id="g">
 			 
@@ -47,10 +47,10 @@
 		</tween:TweenGroup>
 	</w:Declarations>
 	<w:Config id="16a00c64b62" ></w:Config>
-	<e:Group width="640" height="200" x="0" y="0">
+	<e:Group width="640" height="300" x="0" y="0" >
 		<e:Button id="itemBtn" label="操作" x="225" y="103" width="120" height="46"/>
 		<e:Label id="title" text="动态标题" x="225" y="24"/>
-		<e:Label id="content" text="缩略内容" x="225" y="68.36" size="20" textColor="0xbcbcbc"/>
+		<e:Label id="content" text="缩略内容" x="225" y="68.36" size="20" width="360" height="300" textColor="0xbcbcbc" lineSpacing="5"/>
 		<e:Image id="pic" width="150" height="150" x="100" y="100" anchorOffsetX="75" anchorOffsetY="75"/>
 	</e:Group>
 </e:Skin>
