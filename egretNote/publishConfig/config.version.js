@@ -44,19 +44,15 @@ var EgretConfig={};
 
     EgretConfig.PojectHost = window.location.host;
     EgretConfig.pathname = window.location.pathname;
-    EgretConfig.version = getItem('v') || '1.0.1';
+    EgretConfig.version =  '1.0.2';
     EgretConfig.path = path; //路径
     EgretConfig.ScriptParam = getCurrentParam();
     EgretConfig.TestFile ='manifest.json';
     EgretConfig.protocol =window.location.protocol + '//';
     EgretConfig.needToUpdata=false;
-    EgretConfig.resource =EgretConfig.protocol
-        + EgretConfig.PojectHost
-        + EgretConfig.pathname
-        + EgretConfig.path
+    EgretConfig.resource = EgretConfig.path
         + EgretConfig.TestFile
         + '?'+EgretConfig.version;
-
    // Error.stack
     //测试能否取到目标地址文件
     function testRequest(){
