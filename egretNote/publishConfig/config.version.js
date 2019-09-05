@@ -1,5 +1,13 @@
 //todo @1在egret Main入口文件里面声明 ============================
 //try {this.EgretConfig = window['EgretConfig']}catch (e){};
+// EgretConfig.path + "resource/default.res.json" 路径修改
+// EgretConfig.path + "resource/default.thm.json" 路径修改
+/*
+//修改EXML地址前缀 prefixURL
+try {
+    if(this.EgretConfig['needToUpdata']&&this.EgretConfig['needToUpdata'] == true)  EXML.prefixURL =this.EgretConfig['path'];
+}catch (e){}
+*/
 //todo @1在egret index.html入口文件 判断是否更新============================
 /*
      var isHasConfig = typeof EgretConfig['needToUpdata'] !== 'undefined' ? true : false;
