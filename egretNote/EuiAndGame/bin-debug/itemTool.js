@@ -48,4 +48,3 @@ var itemTool = (function (_super) {
     return itemTool;
 }(eui.Component));
 __reflect(itemTool.prototype, "itemTool", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=itemTool.js.map

@@ -202,12 +202,11 @@ class dragoneAndEuiDemo extends eui.Group{
         this.addChild(this.demoDragonBonesArmaturedisplay);
 
         this.demoDragonBonesArmaturedisplay.y= 575;
+        this.demoDragonBonesArmaturedisplay.animation.timeScale = 0.5;
 
         this.demoDragonBonesArmaturedisplay.animation.play('jump');//播放龙骨动画
 
-        this.demoDragonBonesArmaturedisplay.animation.timeScale = 0.5;
 
-       // this.demoDragonBonesArmaturedisplay.armature.inheritAnimation = false;
 
     }
 

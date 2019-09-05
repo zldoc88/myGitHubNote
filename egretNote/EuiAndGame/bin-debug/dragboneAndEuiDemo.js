@@ -161,11 +161,9 @@ var dragoneAndEuiDemo = (function (_super) {
         this.slotBodyDefaultDisplay = slotbody.rawDisplay; //缓存默认皮肤
         this.addChild(this.demoDragonBonesArmaturedisplay);
         this.demoDragonBonesArmaturedisplay.y = 575;
-        this.demoDragonBonesArmaturedisplay.animation.play('jump'); //播放龙骨动画
         this.demoDragonBonesArmaturedisplay.animation.timeScale = 0.5;
-        // this.demoDragonBonesArmaturedisplay.armature.inheritAnimation = false;
+        this.demoDragonBonesArmaturedisplay.animation.play('jump'); //播放龙骨动画
     };
     return dragoneAndEuiDemo;
 }(eui.Group));
 __reflect(dragoneAndEuiDemo.prototype, "dragoneAndEuiDemo");
-//# sourceMappingURL=dragboneAndEuiDemo.js.map
