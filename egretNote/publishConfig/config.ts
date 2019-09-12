@@ -2,7 +2,7 @@
 ///<reference path="api.d.ts"/>
 
 import * as path from 'path';
-import { UglifyPlugin, IncrementCompilePlugin, CompilePlugin, ManifestPlugin, ExmlPlugin, EmitResConfigFilePlugin, TextureMergerPlugin, RenamePlugin } from 'built-in';
+import { UglifyPlugin, IncrementCompilePlugin, CompilePlugin, ManifestPlugin, ExmlPlugin, EmitResConfigFilePlugin, TextureMergerPlugin, RenamePlugin ,ConvertResConfigFilePlugin} from 'built-in';
 import { WxgamePlugin } from './wxgame/wxgame';
 import { BricksPlugin } from './bricks/bricks';
 import { CustomPlugin } from './myplugin';
@@ -27,6 +27,14 @@ const config: ResourceManagerConfig = {
                     // }),
                     new ExmlPlugin('debug'), // 非 EUI 项目关闭此设置
                     new IncrementCompilePlugin(),
+                  /*  new TextureMergerPlugin({textureMergerRoot:[ 'resource']}),
+                    new ConvertResConfigFilePlugin({
+                        resourceConfigFiles: [{ filename: "resource/default.res.json", root: "resource/" }],
+                        nameSelector: (p) => {
+                            return path.basename(p).split(".").join("_")
+                        },
+                        TM_Verbose: true
+                    })*/
                 ]
             }
         }
