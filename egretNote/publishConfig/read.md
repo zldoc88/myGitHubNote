@@ -50,3 +50,8 @@ manifest.json
      var url =isHasConfig&&EgretConfig.needToUpdata===true ? EgretConfig.path +list[loaded] : list[loaded] ;
 
   #### //todo 注意，如果是检测404，则默认访问根目录的资源
+
+
+# 压缩合并配置
+config.ts  合并配置
+myplugin.ts   重新排序 manifest.json 配置
